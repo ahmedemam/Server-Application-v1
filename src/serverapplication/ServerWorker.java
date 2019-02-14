@@ -16,7 +16,7 @@ public class ServerWorker extends Thread {
     private String databaseName = "Game";
     private String databasePath = "jdbc:mysql://localhost:3306";
     private String databaseUsername = "root";
-    private String databaseUserpassword = "011421264482014Hardworker";
+    private String databaseUserpassword = "";
     private LinkedHashMap<String, String> serverWorkerData = null;
     private ArrayList<ServerWorker> serverWorkers=null;
 
@@ -242,13 +242,13 @@ public class ServerWorker extends Thread {
                 for(ServerWorker serverWorker : serverWorkers){
                     if(serverWorker.getWorkerId()!=null){ // server worker name != null
                         if(!this.getWorkerId().equals(serverWorker.getWorkerId())) { //
-                            String currentUserMessage = "ONLINE PLAYER " + serverWorker.getWorkerId() +" " +serverWorker.getWorkerName()+" "+serverWorker.getWorkerScore()+ "\n";
+                            String currentUserMessage = "ONLINE " + serverWorker.getWorkerId() +" " +serverWorker.getWorkerName()+" "+serverWorker.getWorkerScore()+ "\n";
                             sendMessage(currentUserMessage);
                         }
                     }
                 }
                 // send others online users current user's status
-                String messageWorker = "ONLINE PLAYER " + this.getWorkerId() +" " +this.getWorkerName()+" "+this.getWorkerScore()+"\n";
+                String messageWorker = "ONLINE " + this.getWorkerId() +" " +this.getWorkerName()+" "+this.getWorkerScore()+"\n";
                 for(ServerWorker serverWorker : serverWorkers){
                     if(!this.getWorkerId().equals(serverWorker.getWorkerId())) {
                         serverWorker.sendMessage(messageWorker);
