@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -23,5 +24,6 @@
          </font>
       </Button>
       <Rectangle fx:id="stateRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="805.0" />
+      <ListView fx:id="playersList" layoutX="22.0" layoutY="49.0" prefHeight="429.0" prefWidth="429.0" />
    </children>
 </Pane>

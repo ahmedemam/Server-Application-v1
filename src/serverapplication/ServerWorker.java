@@ -1,5 +1,7 @@
 package serverapplication;
 
+import com.mysql.fabric.Server;
+
 import java.io.*;
 import java.net.Socket;
 import java.sql.SQLException;
@@ -16,9 +18,10 @@ public class ServerWorker extends Thread {
     private String databaseName = "Game";
     private String databasePath = "jdbc:mysql://localhost:3306";
     private String databaseUsername = "root";
-    private String databaseUserpassword = "";
+    private String databaseUserpassword = "011421264482014Hardworker";
     private LinkedHashMap<String, String> serverWorkerData = null;
     private ArrayList<ServerWorker> serverWorkers=null;
+    // private int PLAYER_ID=0;
 
     public ServerWorker(ServerController serverController, Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -32,6 +35,7 @@ public class ServerWorker extends Thread {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String clientMessage = "";
         while ((clientMessage = bufferedReader.readLine()) != null) {
+            System.out.println(clientMessage);
             String[] inputTokens = clientMessage.split(" ");
             if (inputTokens.length > 0) {
                 if ("INSERT".equals(inputTokens[0]) && inputTokens.length > 1) {
@@ -48,34 +52,144 @@ public class ServerWorker extends Thread {
                     loginOperationHandler(outputStream, inputTokens);
                 } else if("UPDATE".equals(inputTokens[0]) && inputTokens.length > 1){
                     updateOperationHandler(outputStream,inputTokens);
-                }else if("INVITATION".equals(inputTokens[0]) && inputTokens.length >4){
+                }else if("INVITATION".equals(inputTokens[0]) && inputTokens.length >2){
                     // INVITATION GAME REQUEST S.ID R.ID
                     // INVITATION GAME RESPONSE S.ID R.ID ACCEPTANCE_STATE
                     invitationOperationHandler(outputStream,inputTokens);
+                }else if("GAME".equals(inputTokens[0])){
+                    gameOperationHandler(outputStream,inputTokens);
                 }
-
+                else if ("CHAT".equals(inputTokens[0]) && inputTokens.length > 1){
+                    chatOperationHandler(outputStream,inputTokens);
+                }
+                else{
+                    //
+                    sendMessage("INVALID TOKEN");
+                }
             }
         }
         clientSocket.close();
     }
 
-    private void invitationOperationHandler(OutputStream outputStream, String[] inputTokens) {
-        // INVITATION REQUEST S.ID R.ID
-        // INVITATION RESPONSE S.ID R.ID ACCEPTANCE_STATE
-
-        if(inputTokens[0].equals("INVITATION") && inputTokens[1].equals("REQUEST") &&inputTokens.length==4){
-            String senderID=inputTokens[2];
-            String receiverID=inputTokens[3];
-            String invitationRequest="INVITATION REQUEST "+receiverID+" "+senderID;
-
+    private void chatOperationHandler(OutputStream outputStream, String[] inputTokens) throws IOException {
+        // Chat Message
+        // CHAT S_ID R_ID S_MESSAGE
+        ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
+        if (inputTokens[0].equals("CHAT") && inputTokens.length==4){
+            String senderId=inputTokens[1];
+            String recieverId=inputTokens[2];
+            String senderMessage=inputTokens[3];
+            String chatToken="CHAT "+senderId+" "+recieverId+" "+senderMessage;
+            for (ServerWorker worker: serverWorkers){
+                if (worker.getWorkerId().equals(recieverId)){
+                    worker.sendMessage(chatToken);
+                }
+            }
         }
     }
 
-    private void signOutOperationHandler(OutputStream outputStream, String[] inputTokens) {
+    private void gameOperationHandler(OutputStream outputStream, String[] inputTokens) throws IOException {
+        // GAME REQUEST - INVITATION
+        // GAME PLAY
+        // GAME SAVED
+        // GAME PAUSED
+        ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
+        if("GAME".equals(inputTokens[0]) && "PLAY".equals(inputTokens[1]) && inputTokens.length==5){
+            // GAME PLAY S_ID R_ID X Y CHAR
+            String senderId=inputTokens[2];
+            String recieverId=inputTokens[3];
+            String xPoint=inputTokens[4];
+            String yPoint=inputTokens[5];
+            String senderChar=inputTokens[6];
+            String takenSending="GAME PLAY "+senderId+" "+recieverId+" "+xPoint+" "+yPoint+" "+senderChar;
+            for (ServerWorker worker: serverWorkers){
+                if(worker.getWorkerId().equals(recieverId)){
+                    System.out.println(takenSending);
+                    worker.sendMessage(takenSending);
+                }
+            }
+
+        }
+        else if("GAME".equals(inputTokens[0]) && "PAUSED".equals(inputTokens[1])){
+            // GAME PAUSED
+            // NOT IMPLEMENTED YET
+        }
+        else if("GAME".equals(inputTokens[0]) && "SAVED".equals(inputTokens[1])){
+            // GAME SAVED
+            // NOT IMPLEMENTED YET
+        }
+    }
+
+    private void invitationOperationHandler(OutputStream outputStream, String[] inputTokens) throws IOException {
+        // INVITATION REQUEST S.ID R.ID
+        // INVITATION RESPONSE S.ID R.ID ACCEPTANCE_STATE
+        ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
+        if(inputTokens[0].equals("INVITATION") && inputTokens[1].equals("REQUEST") && inputTokens.length==4){
+            String senderID=inputTokens[2];
+            String receiverID=inputTokens[3];
+            String invitationRequest="INVITATION REQUEST "+senderID+" "+receiverID;
+            // search and send
+            for (ServerWorker worker: serverWorkers){
+                if(worker.getWorkerId().equals(receiverID)){
+                    System.out.println(worker.getWorkerId() + " "+worker.getWorkerName()+" :"+receiverID);
+                    worker.sendMessage(invitationRequest);
+                }
+            }
+        }
+        else if(inputTokens[0].equals("INVITATION")&&inputTokens[1].equals("RESPONSE") && inputTokens.length == 5){
+            String senderId=inputTokens[2];
+            String receiverId=inputTokens[3];
+            String invitaionState=inputTokens[4];
+            String invitationResponse="INVITATION RESPONSE "+senderId+" "+receiverId+" "+invitaionState;
+            for (ServerWorker worker: serverWorkers){
+                if(worker.getWorkerId().equals(receiverId)){
+                    System.out.println(worker.getWorkerId() + " "+worker.getWorkerName()+" : "+senderId+" "+receiverId);
+                    worker.sendMessage(invitationResponse);
+                }
+            }
+        }
+    }
+
+    private void signOutOperationHandler(OutputStream outputStream, String[] inputTokens) throws SQLException, IOException {
         String table="";
         databaseManager=new DatabaseManager(databasePath, databaseName, databaseUsername, databaseUserpassword);
+        ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
         // get update data and close connection
         // close socket connection
+        // ............................
+        // SIGNOUT PLAYER Data
+        // ............................
+        if(inputTokens[0].equals("SIGNOUT") && inputTokens[1].equals("PLAYER") && inputTokens.length==3){
+            String [] playerData=inputTokens[2].split(",");
+            LinkedHashMap<String,String> playerDataUpdated=new LinkedHashMap<>();
+            String [] tempKeyValue;
+            int playerIdValue=0;
+            for (int i=0;i<playerData.length;i++){
+                tempKeyValue=playerData[i].split(":");
+                if(tempKeyValue[0].equals("PlayerId")){
+                    playerIdValue=Integer.parseInt(tempKeyValue[1]);
+                }
+                else{
+                    if(tempKeyValue[0].equals("PlayerOnlineStatus")){
+                        // System.out.println(tempKeyValue[0]+" "+tempKeyValue[1]);
+                        playerDataUpdated.put(tempKeyValue[0],"Offline");
+                    }
+                }
+            }
+            // SignOut Query Built
+            String offlinePlayer="OFFLINE PLAYER "+playerIdValue+" "+playerDataUpdated.get("PlayerName");
+            // update data to database
+            databaseManager.updateDatabase("Player", playerIdValue, "PlayerId", true, playerDataUpdated);
+            // remove worker form server workers
+            serverController.removeServerWorker(this);
+            // send message to all
+            for (ServerWorker worker:serverWorkers){
+                if(!worker.getWorkerId().equals(playerIdValue + "")){
+                    worker.sendMessage(offlinePlayer);
+                }
+            }
+            clientSocket.close();
+        }
 
     }
 
@@ -242,13 +356,13 @@ public class ServerWorker extends Thread {
                 for(ServerWorker serverWorker : serverWorkers){
                     if(serverWorker.getWorkerId()!=null){ // server worker name != null
                         if(!this.getWorkerId().equals(serverWorker.getWorkerId())) { //
-                            String currentUserMessage = "ONLINE " + serverWorker.getWorkerId() +" " +serverWorker.getWorkerName()+" "+serverWorker.getWorkerScore()+ "\n";
+                            String currentUserMessage = "ONLINE " + serverWorker.getWorkerId() +" " +serverWorker.getWorkerName()+" "+serverWorker.getWorkerScore();
                             sendMessage(currentUserMessage);
                         }
                     }
                 }
                 // send others online users current user's status
-                String messageWorker = "ONLINE " + this.getWorkerId() +" " +this.getWorkerName()+" "+this.getWorkerScore()+"\n";
+                String messageWorker = "ONLINE " + this.getWorkerId() +" " +this.getWorkerName()+" "+this.getWorkerScore();
                 for(ServerWorker serverWorker : serverWorkers){
                     if(!this.getWorkerId().equals(serverWorker.getWorkerId())) {
                         serverWorker.sendMessage(messageWorker);
@@ -286,6 +400,10 @@ public class ServerWorker extends Thread {
     private String getWorkerScore(){
        return this.serverWorkerData.get("PlayerScore");
     }
+
+    /*private int getPLAYER_ID(){
+        return this.PLAYER_ID;
+    }*/
 }
 
 
@@ -297,4 +415,7 @@ public class ServerWorker extends Thread {
 
 // GAME PLAY SENDER_ID RECIEVER_ID X Y
 
+
+/// SERVER - ARRAYLIST SERVER(WORKER)
+/// WORKER - ARRAYLIST GET WORKERS
 

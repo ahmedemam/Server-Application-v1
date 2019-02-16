@@ -220,7 +220,6 @@ public class DatabaseManager {
         ResultSet resultSet = null;
         ResultSetMetaData resultSetMetaData = null;
         LinkedHashMap<String, LinkedHashMap<String, String>> tableData = new LinkedHashMap<>();
-        LinkedHashMap<String, String> columns = new LinkedHashMap<>();
         if (getDatabaseConnection()) {
             String query = "SELECT * FROM " + tableName + "";
             if (conditionData != null) {
@@ -242,11 +241,10 @@ public class DatabaseManager {
                 int columnLength = resultSetMetaData.getColumnCount();
                 while (resultSet.next()) {
                     String keyValue = "";
+                    LinkedHashMap<String, String> columns = new LinkedHashMap<>();
                     for (int i = 1; i < columnLength; i++) {
                         String columnName = resultSetMetaData.getColumnName(i);
                         String columnValue = resultSet.getString(i);
-                        System.out.print(columnName + ":::" + columnValue);
-                        System.out.println("");
                         if (i == 1) {
                             keyValue = columnValue;
                         } else {
