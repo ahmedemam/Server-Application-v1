@@ -72,6 +72,7 @@ public class Controller implements Initializable {
                 try {
                     dataSelection=databaseManager.selectTable(tableName, null);
                     if(dataSelection!=null){
+                        playersList.getItems().clear();
                         int length=dataSelection.size();
                         int counter=1;
                         LinkedHashMap<String,String> dataRows = null;

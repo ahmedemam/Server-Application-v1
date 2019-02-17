@@ -108,7 +108,6 @@ public class ServerWorker extends Thread {
                     worker.sendMessage(takenSending);
                 }
             }
-
         }
         else if("GAME".equals(inputTokens[0]) && "PAUSED".equals(inputTokens[1])){
             // GAME PAUSED
@@ -124,10 +123,12 @@ public class ServerWorker extends Thread {
         // INVITATION REQUEST S.ID R.ID
         // INVITATION RESPONSE S.ID R.ID ACCEPTANCE_STATE
         ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
-        if(inputTokens[0].equals("INVITATION") && inputTokens[1].equals("REQUEST") && inputTokens.length==4){
+        if(inputTokens[0].equals("INVITATION") && inputTokens[1].equals("REQUEST") && inputTokens.length == 5){
             String senderID=inputTokens[2];
             String receiverID=inputTokens[3];
-            String invitationRequest="INVITATION REQUEST "+senderID+" "+receiverID;
+            String reciverName=inputTokens[4];
+            String invitationRequest="INVITATION REQUEST "+senderID+" "+receiverID+" "+reciverName;
+            System.out.println(invitationRequest);
             // search and send
             for (ServerWorker worker: serverWorkers){
                 if(worker.getWorkerId().equals(receiverID)){
@@ -136,11 +137,12 @@ public class ServerWorker extends Thread {
                 }
             }
         }
-        else if(inputTokens[0].equals("INVITATION")&&inputTokens[1].equals("RESPONSE") && inputTokens.length == 5){
+        else if(inputTokens[0].equals("INVITATION")&&inputTokens[1].equals("RESPONSE") && inputTokens.length == 6){
             String senderId=inputTokens[2];
             String receiverId=inputTokens[3];
-            String invitaionState=inputTokens[4];
-            String invitationResponse="INVITATION RESPONSE "+senderId+" "+receiverId+" "+invitaionState;
+            String invitaionState=inputTokens[5];
+            String recieverName=inputTokens[4];
+            String invitationResponse="INVITATION RESPONSE "+senderId+" "+receiverId+" "+recieverName+" "+invitaionState;
             for (ServerWorker worker: serverWorkers){
                 if(worker.getWorkerId().equals(receiverId)){
                     System.out.println(worker.getWorkerId() + " "+worker.getWorkerName()+" : "+senderId+" "+receiverId);
@@ -204,6 +206,7 @@ public class ServerWorker extends Thread {
             handleClientSocket();
         } catch (IOException | InterruptedException | SQLException exception) {
             System.err.println("> exception: ServerWorker.run(): " + exception.getMessage());
+            exception.printStackTrace();
         }
     }
 
@@ -401,21 +404,25 @@ public class ServerWorker extends Thread {
        return this.serverWorkerData.get("PlayerScore");
     }
 
-    /*private int getPLAYER_ID(){
-        return this.PLAYER_ID;
-    }*/
 }
 
 
-// LOGIN - TOKEN - ONLINE PLAYER ID NAME
-// SIGNOUT - TOKEN - OFFLINE PLAYER ID NAME
-// Game
-// Invitation
-//
-
-// GAME PLAY SENDER_ID RECIEVER_ID X Y
 
 
-/// SERVER - ARRAYLIST SERVER(WORKER)
-/// WORKER - ARRAYLIST GET WORKERS
+///////////////////////////////////////////////
+// CLIENT
+// . client signout
+// . client invitation
+// . client chat
+// . client save game
+// . client resume game
+// . client re-gui
+// . client ai-game
+// . client facebook
+///////////////////////////////////////////////
+//////////// test all server operations
+//////////// test all client operations
+///////////////////////////////////////////////
+// Invitation - class message
+
 
