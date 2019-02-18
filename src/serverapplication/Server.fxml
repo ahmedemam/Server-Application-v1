@@ -6,24 +6,24 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="serverapplication.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="serverapplication.Controller">
    <children>
-      <Button fx:id="startServer" layoutX="593.0" layoutY="155.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="183.0" text="START SERVER">
+      <Button fx:id="startServer" layoutX="304.0" layoutY="155.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="183.0" text="START SERVER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="stopServer" layoutX="593.0" layoutY="222.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="183.0" text="STOP SERVER">
+      <Button fx:id="stopServer" layoutX="304.0" layoutY="222.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="183.0" text="STOP SERVER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="showPlayers" layoutX="593.0" layoutY="289.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="183.0" text="SHOW USERS">
+      <Button fx:id="showPlayers" layoutX="304.0" layoutY="289.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="183.0" text="SHOW USERS">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Rectangle fx:id="stateRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="805.0" />
-      <ListView fx:id="playersList" layoutX="26.0" layoutY="55.0" prefHeight="424.0" prefWidth="533.0" />
+      <Rectangle fx:id="stateRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="-1.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="505.0" />
+      <ListView fx:id="playersList" layoutX="26.0" layoutY="55.0" prefHeight="424.0" prefWidth="255.0" style="-fx-background-color: lightblue; -fx-border-radius: 10px;" />
    </children>
 </Pane>

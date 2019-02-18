@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Server.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapplication/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapplication/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapplication/Server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/Server.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" afterDir="false" />
     </list>
@@ -92,6 +96,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/serverapplication/ServerWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="100" column="40" lean-forward="true" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#ServerWorker#0;class#ServerWorker#0" expanded="true" />
+                <element signature="method#handleClientSocket#0;class#ServerWorker#0" expanded="true" />
+                <element signature="method#chatOperationHandler#0;class#ServerWorker#0" expanded="true" />
+                <element signature="method#invitationOperationHandler#0;class#ServerWorker#0" expanded="true" />
+                <element signature="method#signOutOperationHandler#0;class#ServerWorker#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Player">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -104,54 +125,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/serverapplication/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="323">
+              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#start#0;class#Main#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="90" column="55" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="class#1339:1882" expanded="true" />
-                <element signature="method#handle#0;class#1339:1882" expanded="true" />
-                <element signature="class#1921:2345" expanded="true" />
-                <element signature="method#handle#0;class#1921:2345" expanded="true" />
+                <element signature="method#handle#0;class#631:1085" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1196#1197#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/serverapplication/DatabaseManager.java">
+        <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="218" column="75" selection-start-line="218" selection-start-column="64" selection-end-line="218" selection-end-column="75" />
+            <state relative-caret-position="940">
+              <caret line="109" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#DatabaseManager#0" expanded="true" />
-                <element signature="docComment;method#DatabaseManager#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#DatabaseManager#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#getDatabaseConnection#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="docComment;method#insertDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#insertDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="docComment;method#updateDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#updateDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="docComment;method#deleteDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#deleteDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="docComment;method#selectOneDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#selectOneDatabase#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#selectTable#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="docComment;method#closeConnection#0;class#DatabaseManager#0" expanded="true" />
-                <element signature="method#closeConnection#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#initialize#0;class#Controller#0" expanded="true" />
+                <element signature="class#2480:4223" expanded="true" />
+                <element signature="method#handle#0;class#2480:4223" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,6 +164,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>running</find>
+      <find>ASD</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -190,9 +186,11 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/serverapplication/AlertBox.java" />
         <option value="$PROJECT_DIR$/src/test/AlertBox.java" />
+        <option value="$PROJECT_DIR$/src/serverapplication/Player.java" />
+        <option value="$PROJECT_DIR$/src/invitetest/Player.java" />
         <option value="$PROJECT_DIR$/src/serverapplication/Main.java" />
-        <option value="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" />
         <option value="$PROJECT_DIR$/src/serverapplication/Controller.java" />
+        <option value="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" />
       </list>
     </option>
   </component>
@@ -212,7 +210,32 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Server Application V1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server Application V1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server Application V1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server Application V1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server Application V1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server Application V1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="serverapplication" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -225,7 +248,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550413032733" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550515180259" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MultiChat Application" />
@@ -358,12 +381,14 @@
       <workItem from="1550395489479" duration="14202000" />
       <workItem from="1550414326308" duration="11739000" />
       <workItem from="1550459089996" duration="392000" />
-      <workItem from="1550475174336" duration="2714000" />
+      <workItem from="1550475174336" duration="3101000" />
+      <workItem from="1550480290671" duration="8111000" />
+      <workItem from="1550497214298" duration="15370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88079000" />
+    <option name="totallyTimeSpent" value="111947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +401,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.2659091" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -387,8 +411,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5982906" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32991454" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.85470086" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6923077" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -402,8 +426,9 @@
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32820514" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32935154" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32820514" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.6877133" />
+      <window_info anchor="bottom" id="Thumbnails" order="18" weight="0.32991454" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -500,12 +525,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/serverapplication/Server.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/GameBoard" />
     <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Game" />
@@ -528,20 +553,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/AlertBox.java" />
-    <entry file="file://$PROJECT_DIR$/src/serverapplication/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#start#0;class#Main#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/src/invitetest/Player.java" />
+    <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Player">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/serverapplication/DatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
+        <state relative-caret-position="906">
           <caret line="218" column="75" selection-start-line="218" selection-start-column="64" selection-end-line="218" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -564,39 +586,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="true" />
+            <element signature="class#2480:4223" expanded="true" />
+            <element signature="method#handle#0;class#2480:4223" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serverapplication/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handle#0;class#631:1085" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/serverapplication/ServerWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="188" selection-start-line="188" selection-end-line="188" selection-end-column="69" />
+        <state relative-caret-position="7">
+          <caret line="100" column="40" lean-forward="true" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ServerWorker#0;class#ServerWorker#0" expanded="true" />
             <element signature="method#handleClientSocket#0;class#ServerWorker#0" expanded="true" />
             <element signature="method#chatOperationHandler#0;class#ServerWorker#0" expanded="true" />
-            <element signature="method#gameOperationHandler#0;class#ServerWorker#0" expanded="true" />
-            <element signature="e#4248#4276#0" expanded="true" />
             <element signature="method#invitationOperationHandler#0;class#ServerWorker#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Player">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="90" column="55" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#1339:1882" expanded="true" />
-            <element signature="method#handle#0;class#1339:1882" expanded="true" />
-            <element signature="class#1921:2345" expanded="true" />
-            <element signature="method#handle#0;class#1921:2345" expanded="true" />
+            <element signature="method#signOutOperationHandler#0;class#ServerWorker#0" expanded="true" />
           </folding>
         </state>
       </provider>

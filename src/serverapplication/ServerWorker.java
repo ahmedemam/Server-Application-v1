@@ -89,19 +89,14 @@ public class ServerWorker extends Thread {
     }
 
     private void gameOperationHandler(OutputStream outputStream, String[] inputTokens) throws IOException {
-        // GAME REQUEST - INVITATION
-        // GAME PLAY
-        // GAME SAVED
-        // GAME PAUSED
         ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
-        if("GAME".equals(inputTokens[0]) && "PLAY".equals(inputTokens[1]) && inputTokens.length==5){
-            // GAME PLAY S_ID R_ID X Y CHAR
+        if("GAME".equals(inputTokens[0]) && "PLAY".equals(inputTokens[1])){
+            // GAME PLAY S_ID R_ID X Y
             String senderId=inputTokens[2];
             String recieverId=inputTokens[3];
             String xPoint=inputTokens[4];
             String yPoint=inputTokens[5];
-            String senderChar=inputTokens[6];
-            String takenSending="GAME PLAY "+senderId+" "+recieverId+" "+xPoint+" "+yPoint+" "+senderChar;
+            String takenSending="GAME PLAY "+senderId+" "+recieverId+" "+xPoint+" "+yPoint;
             for (ServerWorker worker: serverWorkers){
                 if(worker.getWorkerId().equals(recieverId)){
                     System.out.println(takenSending);
@@ -137,7 +132,7 @@ public class ServerWorker extends Thread {
                 }
             }
         }
-        else if(inputTokens[0].equals("INVITATION")&&inputTokens[1].equals("RESPONSE") && inputTokens.length == 6){
+        else if(inputTokens[0].equals("INVITATION")&&inputTokens[1].equals("RESPONSE")){
             String senderId=inputTokens[2];
             String receiverId=inputTokens[3];
             String invitaionState=inputTokens[5];

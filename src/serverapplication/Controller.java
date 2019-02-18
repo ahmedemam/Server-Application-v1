@@ -85,9 +85,9 @@ public class Controller implements Initializable {
                             String key = entry.getKey();
                             LinkedHashMap<String,String> valueRow=entry.getValue();
                             String [] rowArray= valueRow.values().toArray(new String[0]);
-                            String row=counter+" - ";
+                            String row="";
                             for (int i=0;i<4;i++){
-                                if(i!=2){
+                                if(i!=1 && i!=2){
                                     row+=rowArray[i]+"  ";
                                 }
                             }
