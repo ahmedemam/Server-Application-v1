@@ -161,7 +161,7 @@ public class ServerWorker extends Thread {
         // ............................
         // SIGNOUT PLAYER Data
         // ............................
-        if(inputTokens[0].equals("SIGNOUT") && inputTokens[1].equals("PLAYER") && inputTokens.length==3){
+        if(inputTokens[0].equals("SIGNOUT") && inputTokens[1].equals("PLAYER")){
             String [] playerData=inputTokens[2].split(",");
             LinkedHashMap<String,String> playerDataUpdated=new LinkedHashMap<>();
             String [] tempKeyValue;
@@ -385,7 +385,6 @@ public class ServerWorker extends Thread {
     public void setWorkerData(LinkedHashMap<String, String> workerData) {
         this.serverWorkerData = workerData;
     }
-
 
     private void updateOperationHandler(OutputStream outputStream, String[] inputTokens) {
         String tableName="";

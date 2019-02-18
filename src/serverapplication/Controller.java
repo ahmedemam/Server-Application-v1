@@ -1,11 +1,16 @@
 package serverapplication;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
@@ -18,12 +23,12 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     private ServerController serverController=null;
     private boolean serverState=false;
-    private boolean restartServer=false;
     @FXML private Button startServer;
     @FXML private Button stopServer;
     @FXML private Button showPlayers;
     @FXML private Rectangle stateRectangle;
-    @FXML private ListView<String> playersList;
+    @FXML private ListView playersList;
+
     private DatabaseManager databaseManager = null;
     private String databaseName = "Game";
     private String databasePath = "jdbc:mysql://localhost:3306";
@@ -39,13 +44,13 @@ public class Controller implements Initializable {
         startServer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!serverState && !restartServer){
+                if(!serverState){
                     serverController=new ServerController(4444);
                     serverController.start();
                     stateRectangle.setStyle("-fx-fill: chartreuse;");
                     serverState=true;
                 }
-                if(!serverState && restartServer){
+                if(!serverState){
                     serverController.restartConnection();
                 }
             }
@@ -59,7 +64,6 @@ public class Controller implements Initializable {
                     serverState=false;
                     stateRectangle.setStyle("-fx-fill: tomato;");
                     serverController.stopConnection();
-                    restartServer=true;
                 }
             }
         });
@@ -73,6 +77,7 @@ public class Controller implements Initializable {
                     dataSelection=databaseManager.selectTable(tableName, null);
                     if(dataSelection!=null){
                         playersList.getItems().clear();
+                        //playerTable.getColumns().clear();
                         int length=dataSelection.size();
                         int counter=1;
                         LinkedHashMap<String,String> dataRows = null;
@@ -82,7 +87,9 @@ public class Controller implements Initializable {
                             String [] rowArray= valueRow.values().toArray(new String[0]);
                             String row=counter+" - ";
                             for (int i=0;i<4;i++){
-                                row+=rowArray[i]+" ";
+                                if(i!=2){
+                                    row+=rowArray[i]+"  ";
+                                }
                             }
                             playersList.getItems().add(row);
                             counter++;
@@ -97,5 +104,6 @@ public class Controller implements Initializable {
             }
         });
         /// CLOSE CONNECTION PROBLEM
+
     }
 }
