@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Server_Application_V1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Controller$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/Server.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapplication/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapplication/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapplication/Server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/Server.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/ServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server Application V1/serverapplication/ServerWorker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -99,13 +96,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/serverapplication/ServerWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="100" column="40" lean-forward="true" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+            <state relative-caret-position="179">
+              <caret line="82" column="53" lean-forward="true" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#ServerWorker#0;class#ServerWorker#0" expanded="true" />
                 <element signature="method#handleClientSocket#0;class#ServerWorker#0" expanded="true" />
-                <element signature="method#chatOperationHandler#0;class#ServerWorker#0" expanded="true" />
+                <element signature="e#3493#3508#0" expanded="true" />
+                <element signature="method#gameOperationHandler#0;class#ServerWorker#0" expanded="true" />
                 <element signature="method#invitationOperationHandler#0;class#ServerWorker#0" expanded="true" />
                 <element signature="method#signOutOperationHandler#0;class#ServerWorker#0" expanded="true" />
               </folding>
@@ -114,7 +112,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Player">
+        <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/GameBoard">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -123,10 +121,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/serverapplication/DatabaseManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="171" column="90" selection-start-line="171" selection-start-column="77" selection-end-line="171" selection-end-column="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#DatabaseManager#0" expanded="true" />
+                <element signature="docComment;method#DatabaseManager#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#DatabaseManager#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#getDatabaseConnection#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="docComment;method#insertDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#insertDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="docComment;method#updateDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#updateDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="docComment;method#deleteDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#deleteDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="docComment;method#selectOneDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#selectOneDatabase#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#selectTable#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="docComment;method#closeConnection#0;class#DatabaseManager#0" expanded="true" />
+                <element signature="method#closeConnection#0;class#DatabaseManager#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/serverapplication/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="221">
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#handle#0;class#631:1085" expanded="true" />
@@ -140,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="68">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initialize#0;class#Controller#0" expanded="true" />
@@ -183,7 +208,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74302560-b104-4c31-b5b0-fbb27de995af/console.sql" />
         <option value="$PROJECT_DIR$/src/serverapplication/ServerController.java" />
         <option value="$PROJECT_DIR$/src/serverapplication/DatabaseManager.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/serverapplication/AlertBox.java" />
         <option value="$PROJECT_DIR$/src/test/AlertBox.java" />
         <option value="$PROJECT_DIR$/src/serverapplication/Player.java" />
@@ -191,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/serverapplication/Main.java" />
         <option value="$PROJECT_DIR$/src/serverapplication/Controller.java" />
         <option value="$PROJECT_DIR$/src/serverapplication/ServerWorker.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
       </list>
     </option>
   </component>
@@ -210,32 +235,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Server Application V1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server Application V1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server Application V1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server Application V1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server Application V1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server Application V1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="serverapplication" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -248,13 +248,13 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550515180259" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550517762461" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MultiChat Application" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -383,12 +383,15 @@
       <workItem from="1550459089996" duration="392000" />
       <workItem from="1550475174336" duration="3101000" />
       <workItem from="1550480290671" duration="8111000" />
-      <workItem from="1550497214298" duration="15370000" />
+      <workItem from="1550497214298" duration="17510000" />
+      <workItem from="1550518539292" duration="213000" />
+      <workItem from="1550559294939" duration="4391000" />
+      <workItem from="1550563947313" duration="761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111947000" />
+    <option name="totallyTimeSpent" value="119452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -402,7 +405,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.2659091" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.275" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -412,7 +415,7 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.85470086" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.85470086" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6923077" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,7 +436,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.22727273" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.22727273" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" />
@@ -524,15 +527,6 @@
     <entry file="file://$PROJECT_DIR$/Server Application V1.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/serverapplication/Server.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/GameBoard" />
     <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Game" />
     <entry file="file://$PROJECT_DIR$/src/serverapplication/ServerController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -554,7 +548,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/AlertBox.java" />
     <entry file="file://$PROJECT_DIR$/src/invitetest/Player.java" />
-    <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Player">
+    <entry file="file://$PROJECT_DIR$/src/serverapplication/Server.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/GameBoard">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -563,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/serverapplication/DatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
-          <caret line="218" column="75" selection-start-line="218" selection-start-column="64" selection-end-line="218" selection-end-column="75" />
+        <state relative-caret-position="476">
+          <caret line="171" column="90" selection-start-line="171" selection-start-column="77" selection-end-line="171" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DatabaseManager#0" expanded="true" />
@@ -586,23 +588,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="true" />
-            <element signature="class#2480:4223" expanded="true" />
-            <element signature="method#handle#0;class#2480:4223" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/serverapplication/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="221">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handle#0;class#631:1085" expanded="true" />
@@ -612,15 +601,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/serverapplication/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="true" />
+            <element signature="class#2480:4223" expanded="true" />
+            <element signature="method#handle#0;class#2480:4223" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://74302560-b104-4c31-b5b0-fbb27de995af/schema/Game/table/Player">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/serverapplication/ServerWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="100" column="40" lean-forward="true" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+        <state relative-caret-position="179">
+          <caret line="82" column="53" lean-forward="true" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ServerWorker#0;class#ServerWorker#0" expanded="true" />
             <element signature="method#handleClientSocket#0;class#ServerWorker#0" expanded="true" />
-            <element signature="method#chatOperationHandler#0;class#ServerWorker#0" expanded="true" />
+            <element signature="e#3493#3508#0" expanded="true" />
+            <element signature="method#gameOperationHandler#0;class#ServerWorker#0" expanded="true" />
             <element signature="method#invitationOperationHandler#0;class#ServerWorker#0" expanded="true" />
             <element signature="method#signOutOperationHandler#0;class#ServerWorker#0" expanded="true" />
           </folding>
@@ -632,8 +642,15 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
+          <artifact-editor>
+            <show-content>
+              <type id="jpa-descriptors" />
+              <type id="artifact" />
+              <type id="javaee-facet-resources" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>Server Application V1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

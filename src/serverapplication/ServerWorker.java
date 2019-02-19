@@ -88,7 +88,7 @@ public class ServerWorker extends Thread {
         }
     }
 
-    private void gameOperationHandler(OutputStream outputStream, String[] inputTokens) throws IOException {
+    private void gameOperationHandler(OutputStream outputStream, String[] inputTokens) throws IOException, SQLException {
         ArrayList<ServerWorker> serverWorkers=serverController.getServerWorkers();
         if("GAME".equals(inputTokens[0]) && "PLAY".equals(inputTokens[1])){
             // GAME PLAY S_ID R_ID X Y
@@ -104,13 +104,27 @@ public class ServerWorker extends Thread {
                 }
             }
         }
-        else if("GAME".equals(inputTokens[0]) && "PAUSED".equals(inputTokens[1])){
-            // GAME PAUSED
-            // NOT IMPLEMENTED YET
+        else if("GAME".equals(inputTokens[0]) && "LOAD".equals(inputTokens[1])){
+            String playerId=inputTokens[2];
+            LinkedHashMap<String,String> GamePlayer=new LinkedHashMap<>();
+            GamePlayer.put("GamePlayerId", inputTokens[2]);
+            LinkedHashMap<String,String> gameBoard=new LinkedHashMap<>();
+            gameBoard=databaseManager.selectOneDatabase("GameBoard", GamePlayer);
+            String gameArray="GAME LOAD "+gameBoard.get("GameBoardArray");
+            System.out.println(gameBoard.values());
+            for (ServerWorker worker: serverWorkers){
+                if(worker.getWorkerId().equals(playerId)){
+                    worker.sendMessage(gameArray);
+                }
+            }
         }
         else if("GAME".equals(inputTokens[0]) && "SAVED".equals(inputTokens[1])){
-            // GAME SAVED
-            // NOT IMPLEMENTED YET
+            String playerId=inputTokens[2];
+            String gameArray=inputTokens[3];
+            LinkedHashMap<String,String> gameData=new LinkedHashMap<>();
+            gameData.put("GameBoardArray", gameArray);
+            gameData.put("GamePlayerId", playerId);
+            databaseManager.insertDatabase("GameBoard", 0, true,gameData );
         }
     }
 
